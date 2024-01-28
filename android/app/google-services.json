@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "979015392137",
+    "project_id": "react-push-noti-60675",
+    "storage_bucket": "react-push-noti-60675.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979015392137:android:85dea2d3e0e2d4f36e5f58",
+        "android_client_info": {
+          "package_name": "com.reactpushnotification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5nDaWHbovyUJfVjBWnCZwdkYHGDSezWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.reactnativeapp
+package com.reactpushnotification
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
