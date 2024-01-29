@@ -1,23 +1,13 @@
 import React from 'react';
-import {
-  Alert,
-  SafeAreaView,
-  StatusBar,
-  Text,
-  useColorScheme,
-} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Alert, Dimensions, SafeAreaView, StyleSheet} from 'react-native';
 
 import messaging from '@react-native-firebase/messaging';
+import WebView from 'react-native-webview';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   messaging().setBackgroundMessageHandler(async remoteMessage => {
     console.log('Message handled in the background!', remoteMessage);
   });
@@ -30,14 +20,26 @@ function App(): React.JSX.Element {
   });
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+    <SafeAreaView style={styles.container}>
+      <WebView
+        source={{uri: 'http://localhost:3000/'}}
+        style={styles.webview}
       />
-      <Text>Hello World!</Text>
     </SafeAreaView>
   );
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  webview: {
+    flex: 1,
+    width: windowWidth,
+    height: windowHeight,
+  },
+});
